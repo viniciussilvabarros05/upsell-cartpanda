@@ -10,18 +10,18 @@
     </script>
   </head>
   <body>
-    <div style="max-width: 900px; margin: auto;">
-    <vturb-smartplayer
-      id="vid-6841c4932fab1c6d70e79984"
-      style="display: block; margin: 0 auto; width: 100%"
-    ></vturb-smartplayer>
-    <script type="text/javascript">
-      var s = document.createElement("script");
-      (s.src =
-        "https://scripts.converteai.net/4730a2b3-52b1-4519-a557-5873668db14b/players/6841c4932fab1c6d70e79984/v4/player.js"),
-        (s.async = !0),
-        document.head.appendChild(s);
-    </script>
+    <div style="max-width: 900px; margin: auto">
+      <vturb-smartplayer
+        id="vid-6841c4932fab1c6d70e79984"
+        style="display: block; margin: 0 auto; width: 100%"
+      ></vturb-smartplayer>
+      <script type="text/javascript">
+        var s = document.createElement("script");
+        (s.src =
+          "https://scripts.converteai.net/4730a2b3-52b1-4519-a557-5873668db14b/players/6841c4932fab1c6d70e79984/v4/player.js"),
+          (s.async = !0),
+          document.head.appendChild(s);
+      </script>
     </div>
 
     <div
@@ -56,11 +56,31 @@
           padding: 1rem;
           text-decoration: none;
           border-radius: 4px;
-           color: white;
+          color: white;
         "
       >
         RECUSAR UPSELL
       </a>
     </div>
+    <script>
+      // Aguarda o DOM carregar
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("upsell-yes");
+        if (!button) return;
+
+        // Obtém a URL atual do botão
+        const originalUrl = button.getAttribute("href");
+        if (!originalUrl) return;
+
+        // Cria um objeto URL para manipular facilmente a query string
+        const url = new URL(originalUrl, window.location.origin);
+
+        // Define (ou substitui) o parâmetro utm_medium
+        url.searchParams.set("utm_medium", "andre-teste-123");
+
+        // Atualiza o href do botão
+        button.setAttribute("href", url.toString());
+      });
+    </script>
   </body>
 </html>
